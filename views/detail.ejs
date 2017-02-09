@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Widget</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="i/favicon.png">
+    <link rel="stylesheet" href="css/amazeui.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/amazeui.videojs.css">
+    <!--<link rel="stylesheet" href="css/video-js.min.css">-->
+    <script src="js/video.js"></script>
+</head>
+<body>
+
+<!--data-am-figure="{  pureview: 'auto'  }"-->
+<figure data-am-widget="figure" class="am am-figure am-figure-default ">
+    <video id="example_video_1" class="video-js vjs-amazeui"
+           controls preload="none" width="100%" height="340" style="margin: 0 auto" data-setup="{}"
+           poster="http://img5.douban.com/lpic/o636459.jpg">
+        <source src="video/111.mp4" type='video/mp4' />
+    </video>
+
+    <figcaption class="am-figure-capition-btm">春天的花开秋天的风以及冬天的落阳</figcaption>
+</figure>
+<iframe src="http://rtmp.kuaibo2.net/?MzcyMnw2NDB8NDgwfDE=#iframeload" width="100%" height="540" style="margin: 0 auto"  border="0"></iframe>
+
+<ul class="am-pagination"><li class="am-pagination-prev"><a href="../../../../widgets/duoshuo/default/0">« 上一个</a></li><li class="am-pagination-next"><a href="../../../../widgets/figure/one/0">下一个 »</a></li></ul>
+<div
+        class="am-slider am-slider-default am-slider-carousel"
+        data-am-flexslider="{itemWidth: 200, itemMargin: 5, slideshow: false}">
+    <ul class="am-slides">
+        <li><img src="http://s.amazeui.org/media/i/demos/pure-4.jpg?imageView2/0/w/640" draggable="false"></li>
+        <li> <img src="http://s.amazeui.org/media/i/demos/pure-1.jpg?imageView2/0/w/640" draggable="false"></li>
+    </ul>
+</div>
+<!-- Navbar -->
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default "
+     id="">
+    <ul class="am-navbar-nav am-cf am-avg-sm-4">
+        <li>
+            <a href="home">
+                <span class="am-icon-home"></span>
+                <span class="am-navbar-label">首页</span>
+            </a>
+        </li>
+        <li data-am-navbar-share>
+            <a href="###">
+                <span class="am-icon-search"></span>
+                <span class="am-navbar-label">搜索</span>
+            </a>
+        </li>
+        <li data-am-navbar-qrcode>
+            <a href="###">
+                <span class="am-icon-user"></span>
+                <span class="am-navbar-label">个人中心</span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+<script>
+    videojs.options.flash.swf = "js/video-js.swf";
+</script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/amazeui.min.js"></script>
+</body>
+</html>

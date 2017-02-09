@@ -1,0 +1,12 @@
+/* Write your styles */
+
+
+
+.am-figure-default video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding: 2px;
+    border: 1px solid #eee;
+    margin: 10px auto;
+}
