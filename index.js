@@ -24,11 +24,18 @@ router.get("(/home|/)", function (ctx, next) {
 })
 router.get("/list", function (ctx, next) {
     next();
-    return ctx.render('list')
+    return videobll.list(1, 10, function (res) {
+        return ctx.render('list', {list: res});
+    })
+
 })
-router.get("/detail", function (ctx, next) {
+router.get("/detail/:id", function (ctx, next) {
     next();
-    return ctx.render('detail')
+    var id = ctx.params.id;
+    return videobll.detail(1, 5,id, function (list, detail) {
+        return ctx.render('detail', {detail: detail, list:list});
+    })
+
 })
 
 app.use(router.routes()).use(router.allowedMethods());

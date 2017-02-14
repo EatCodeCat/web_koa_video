@@ -31,30 +31,16 @@
     <div class="am-list-news-bd">
         <ul class="am-list">
             <!--缩略图在标题上方-->
-            <li  class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-top">
-                <div onclick="location.href='detail'" class="am-list-thumb am-u-sm-12">
-                    <img src="image/pure-4.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
-                </div>
-                <div class=" am-list-main">
-                    <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>
-                </div>
-            </li>
-            <li  class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-top">
-                <div onclick="location.href='detail'" class="am-list-thumb am-u-sm-12">
-                    <img src="image/pure-4.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
-                </div>
-                <div class=" am-list-main">
-                    <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>
-                </div>
-            </li>
-            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-top">
-                <div onclick="location.href='detail'" class="am-list-thumb am-u-sm-12">
-                    <img src="image/pure-4.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
-                </div>
-                <div class=" am-list-main">
-                    <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>
-                </div>
-            </li>
+            <% for(var i=0; i<list.length; i++) {%>
+                <li  class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-top">
+                    <div onclick="location.href='detail/<%=list[i].id%>'" class="am-list-thumb am-u-sm-12">
+                        <img src="<%=list[i].thumbnail%>" alt="<%=list[i].title%>"/>
+                    </div>
+                    <div class=" am-list-main">
+                        <h3 class="am-list-item-hd"><a href="detail/<%=list[i].id%>"> <%=list[i].title%></a></h3>
+                    </div>
+                </li>
+            <% } %>
         </ul>
     </div>
 

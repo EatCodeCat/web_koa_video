@@ -6,10 +6,10 @@ var log4js = require('log4js');
 var logger = log4js.getLogger("mysql");
 var connection = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
+    host: '120.77.41.111',
     user: 'root',
-    password: '',
-    database: 'av_db'
+    password: '123456',
+    database: 'web_video_db'
 });
 var dataDao = {}
 
@@ -27,11 +27,20 @@ dataDao.query = function (sql, param) {
     });
     return promise;
 }
+dataDao.batch_query =function (querys) {
+    return Promise.all(querys);
+}
 dataDao.queryVideoList = function (pageIndex, pageSize) {
     var end = pageSize * pageIndex;
     var begin = pageSize * (pageIndex - 1);
-    return dataDao.query('SELECT * FROM av_db.video_info limit ?, ?', [begin, end]);
+    return dataDao.query('SELECT * FROM video_info limit ?, ?', [begin, end]);
+}
+dataDao.getVideo = function (id) {
+    return dataDao.query('SELECT * FROM video_info where id = ?', [id]);
 }
 
+dataDao.getVideoAndLis = function(pageIndex, pageSize, id){
+    return dataDao.batch_query([dataDao.queryVideoList(pageIndex,pageSize), dataDao.getVideo(id)])
+}
 
 module.exports = dataDao;

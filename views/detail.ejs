@@ -11,11 +11,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="icon" type="image/png" href="i/favicon.png">
-    <link rel="stylesheet" href="css/amazeui.min.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/amazeui.videojs.css">
+    <link rel="stylesheet" href="/css/amazeui.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/amazeui.videojs.css">
     <!--<link rel="stylesheet" href="css/video-js.min.css">-->
-    <script src="js/video.js"></script>
+    <script src="/js/video.js"></script>
 </head>
 <body>
 
@@ -23,11 +23,11 @@
 <figure data-am-widget="figure" class="am am-figure am-figure-default ">
     <video id="example_video_1" class="video-js vjs-amazeui"
            controls preload="none" width="100%" height="340" style="margin: 0 auto" data-setup="{}"
-           poster="http://img5.douban.com/lpic/o636459.jpg">
-        <source src="video/111.mp4" type='video/mp4' />
+           poster="<%=detail.pic%>">
+        <source src="<%=detail.url%>" type='video/<%=detail.video_format%>' />
     </video>
 
-    <figcaption class="am-figure-capition-btm">春天的花开秋天的风以及冬天的落阳</figcaption>
+    <figcaption class="am-figure-capition-btm"><%=detail.title%></figcaption>
 </figure>
 
 <ul class="am-pagination"><li class="am-pagination-prev"><a href="../../../../widgets/duoshuo/default/0">« 上一个</a></li><li class="am-pagination-next"><a href="../../../../widgets/figure/one/0">下一个 »</a></li></ul>
@@ -35,7 +35,10 @@
         class="am-slider am-slider-default am-slider-carousel"
         data-am-flexslider="{itemWidth: 200, itemMargin: 5, slideshow: false}">
     <ul class="am-slides">
-        <li><img src="http://s.amazeui.org/media/i/demos/pure-4.jpg?imageView2/0/w/640" draggable="false"></li>
+        <% for(var i=0; i<list.length; i++) {%>
+            <li><a href="/detail/<%=list[i].id%>"><img src="<%=list[i].thumbnail%>" draggable="false"></a></li>
+        <%}%>
+
         <li> <img src="http://s.amazeui.org/media/i/demos/pure-1.jpg?imageView2/0/w/640" draggable="false"></li>
     </ul>
 </div>
@@ -67,7 +70,7 @@
 <script>
     videojs.options.flash.swf = "js/video-js.swf";
 </script>
-<script src="js/jquery-2.1.1.min.js"></script>
-<script src="js/amazeui.min.js"></script>
+<script src="/js/jquery-2.1.1.min.js"></script>
+<script src="/js/amazeui.min.js"></script>
 </body>
 </html>
