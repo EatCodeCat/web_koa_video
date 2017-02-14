@@ -6,9 +6,9 @@ var log4js = require('log4js');
 var logger = log4js.getLogger("mysql");
 var connection = mysql.createPool({
     connectionLimit: 10,
-    host: '120.77.41.111',
+    host: 'localhost',
     user: 'root',
-    password: '123456',
+    password: '',
     database: 'web_video_db'
 });
 var dataDao = {}
